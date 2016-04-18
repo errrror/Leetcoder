@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * Created by YGZ on 2016/2/29.
+ * My email : errrrorer@foxmail.com
  */
 public class CombinationSumII {
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
