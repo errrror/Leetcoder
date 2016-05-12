@@ -2,6 +2,7 @@ import java.util.List;
 
 /**
  * Created by YGZ on 2016/3/31.
+ * My email : errrrorer@foxmail.com
  */
 public class RemoveDuplicatesfromSortedListII {
     public ListNode deleteDuplicates(ListNode head) {
