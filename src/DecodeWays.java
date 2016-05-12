@@ -4,38 +4,28 @@
  */
 public class DecodeWays {
     public int numDecodings(String s) {
-        if (s.length()==0) return 0;
+        if (s==null||s.length()==0) return 0;
         if (s.charAt(0)=='0') return 0;
-        int n1,n2=2;
-        if (s.charAt(0)=='0'){
-            return 0;
-        }else {
-            n1=1;
-            if (s.length()==1) return n1;
-        }
-        if (s.length()==2){
-            if (s.charAt(0)=='0') return 0;
-            if (Integer.parseInt(s)==10||Integer.parseInt(s)==20) return 1;
-            if (Integer.parseInt(s)<=26) return 2;
-        }
-        if (Integer.parseInt(s.substring(0,2))==10||Integer.parseInt(s.substring(0,2))==20) {
-            n2=1;
-        }
-        if (Integer.parseInt(s.substring(0,2))<=26){
-            n2=2;
-        }
-        for (int i=0;i<s.length()-1;i++){
-            if ()
-            int tem = n1+n2;
-            if (s.charAt(i)=='0') return 0;
-            if (s.charAt())
+        if (s.length()==1&&s.charAt(0)!='0') return 1;
+        int n1=1,n2=1;
+        int tem;
+        for (int i=2;i<=s.length();i++){
+            int res = 0;
+            tem = s.charAt(i-1)-'0';
+            if (tem!=0){
+                 res = n2;
+            }
+            tem = Integer.parseInt(s.substring(i-2,i));
+            if (s.charAt(i-2)!='0'&&(tem>=1&&tem<27)){
+                res+=n1;
+            }
             n1 = n2;
-            n2 = tem;
+            n2 = res;
         }
         return n2;
     }
     public static void main(String[] args){
-        String s = "20";
+        String s = "1010";
         DecodeWays decodeWays = new DecodeWays();
         System.out.print(decodeWays.numDecodings(s));
     }
