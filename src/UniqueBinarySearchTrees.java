@@ -24,16 +24,16 @@ public class UniqueBinarySearchTrees {
         flag++;
         int[] tem=new int[flag-from];
         int j=0;
-            for (int i = from; i < flag; i++) {
-                if (i == from) {
-                    tem[j] += helper(i + 1, to);
-                } else if (i == to) {
-                    tem[j] += helper(from, to - 1);
-                } else {
-                    tem[j] += helper(from, i - 1) * helper(i + 1, to);
-                }
-                j++;
+        for (int i = from; i < flag; i++) {
+            if (i == from) {
+                tem[j] += helper(i + 1, to);
+            } else if (i == to) {
+                tem[j] += helper(from, to - 1);
+            } else {
+                tem[j] += helper(from, i - 1) * helper(i + 1, to);
             }
+            j++;
+        }
         if ((to-from)%2==0){
             for (int i = 0; i < tem.length-1 ; i++) {
                 res+= 2 * tem[i];
