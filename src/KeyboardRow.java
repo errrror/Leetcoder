@@ -39,11 +39,12 @@ public class KeyboardRow {
                 list.add(ss);
             }
         }
-        String[] res = new String[list.size()];
+        return list.toArray(new String[list.size()]);
+        /*String[] res = new String[list.size()];
         for (int i=0;i<list.size();i++){
             res[i] = list.get(i);
         }
-        return res;
+        return res;*/
     }
 
     public static void main(String[] args) {
